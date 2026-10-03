@@ -10,12 +10,13 @@
     "template_sha256": "650ff796e9b2583abcf01aa642513233f38a8b8fc8ee184b6f0dad70ca1cf67b",
     "protocol_commit": "0ebe7f2",
     "protocol_commit_full": "0ebe7f210d75acdb362d4272f91afc84029c02f7",
-    "pin_commit": null,
+    "pin_commit": "fdc416f",
     "supersedes": "pin-1",
     "reason": "add two-worktree separation (SUT vs Test Control) + protocol preflight requirement; judgment rules unchanged",
     "runtime_base_tag": "v0.4.0-rc.2",
     "runtime_base_commit": "7c0c9bd",
-    "runtime_base_commit_full": "7c0c9bd1db02c5baf6b3268a3c43827b7370c609"
+    "runtime_base_commit_full": "7c0c9bd1db02c5baf6b3268a3c43827b7370c609",
+    "pin_commit_full": "fdc416f8861fb4d13b6d8c59666076eb9c902730"
   },
   "pins": [
     {
@@ -34,7 +35,7 @@
       "protocol_sha256": "51bbf0fae930b08889e39979ac569d41cdbe6d0e430f98895c3fc9e36ee29268",
       "template_sha256": "650ff796e9b2583abcf01aa642513233f38a8b8fc8ee184b6f0dad70ca1cf67b",
       "protocol_commit": "0ebe7f2",
-      "pin_commit": null,
+      "pin_commit": "fdc416f",
       "status": "CURRENT",
       "note": "two-worktree separation + preflight; judgment rules unchanged"
     }

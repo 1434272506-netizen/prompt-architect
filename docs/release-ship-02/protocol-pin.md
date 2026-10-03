@@ -15,7 +15,7 @@ template_path      = docs/release-ship-02/record-template.md
 template_sha256    = 650ff796e9b2583abcf01aa642513233f38a8b8fc8ee184b6f0dad70ca1cf67b
 
 protocol_commit    = 0ebe7f2（0ebe7f210d75acdb362d4272f91afc84029c02f7）
-pin_commit         = （见 §3 pin-2 行）
+pin_commit         = fdc416f
 pinned_at          = 2026-10-03
 runtime_base_tag   = v0.4.0-rc.2
 runtime_base_commit= 7c0c9bd（7c0c9bd1db02c5baf6b3268a3c43827b7370c609）
@@ -47,7 +47,7 @@ python .gh-search/preflight_ship02.py      # 不一致 ⇒ ABORT，不得开始 
 | pin | protocol_sha256 | template_sha256 | protocol_commit | pin_commit | 状态 | 原因 / 日期 |
 |---|---|---|---|---|---|---|
 | **pin-1** | `f102ff3c…57ab6` | `38b664cf…45ea8a` | `27aad93` | `2465271` | superseded | 首次 pin（判定规则原文）／2026-10-03 |
-| **pin-2** | `51bbf0fa…e29268` | `650ff796…1cf67b` | `0ebe7f2` | _见 §4 注记_ | **CURRENT** | **新增执行结构（被测物/控制物理分离）＋ protocol preflight 要求；判定规则未变**／2026-10-03 |
+| **pin-2** | `51bbf0fa…e29268` | `650ff796…1cf67b` | `0ebe7f2` | `fdc416f` | **CURRENT** | **新增执行结构（被测物/控制物理分离）＋ protocol preflight 要求；判定规则未变**／2026-10-03 |
 
 **supersede 说明（pin-1 → pin-2）**
 
