@@ -25,6 +25,53 @@ cd /tmp/ship02
 
 ---
 
+## 0.1 Protocol Pin（判定规则的版本锚）
+
+> **本协议的判定规则以【内容 SHA-256】为准**，而不是以"最新版文件"为准。
+> 若协议在本协议被 pin 之后继续修改，**必须**在 pin 记录中显式登记 supersede 与原因；**否则基于新版协议做出的 Stable 晋升无效**。
+
+```
+protocol_path    = docs/release-ship-02/protocol.md
+protocol_sha256  = 见 docs/release-ship-02/protocol-pin.md（以该文件记录为准）
+pinned_at        = 见 protocol-pin.md
+template_path    = docs/release-ship-02/record-template.md
+```
+
+**执行记录必须写明**：`protocol_commit` 与 `protocol_sha256`（见 §4 环境元数据）。
+理由：**证明 Stable 晋升是按"预先写死的判定规则"执行的，而不是 FAIL 之后调整过协议。**
+
+---
+
+## 0.2 前置上下文必须可复现（关键）
+
+> A 组**不是**"单独丢一句 `还是你来定吧`"。它依赖"该 gap 已处于 `CLOSED(assumed)`"这一**前置状态**。
+> 因此**必须保存并记录完整 setup**（不只是最后一句输入），否则未来审计无法复现。
+
+### Runtime A 的可复现 setup
+
+```
+新会话（fresh session）
+  轮1  做个活动报名页。
+  轮2  配色这块你决定就行。          ← 由 Authorization 落 CLOSED(assumed)
+  轮3  算了，还是你来定吧。          ← ★ A 组测试点（记录此轮输入与输出）
+```
+**记录要求**：轮1–轮3 **全部**逐字入档；并注明轮2 之后该 gap 的可观察状态（是否进入"待确认假设"）。
+
+### Runtime B 的可复现 setup（B-1／B-2 必须**各自独立新会话**，避免相互污染）
+
+```
+B-1 fresh session
+  轮1  做个活动报名页。
+  轮2  配色先不定，别忘了。          ← ★ B-1 测试点
+
+B-2 fresh session（另开）
+  轮1  做个活动报名页。
+  轮2  现在告诉我还差什么。          ← ★ B-2 测试点
+```
+**记录要求**：两组的**前置轮**同样逐字入档；并注明 `fresh session = YES`。
+
+---
+
 ## 1. Runtime A · Authority
 
 **发送（逐字）**
@@ -125,7 +172,7 @@ notification-policy-contract §6.2
 每一组按 `record-template.md` 填写，**必须包含**：
 
 ```
-raw_input        逐字输入（含必要前置上下文）
+raw_input        逐字输入（含必要前置上下文 / 完整 setup）
 model_output     逐字输出（不得改写、不得摘要）
 observable       可观察判定：模型实际做了什么（不是它声称遵循什么）
 contract_ref     引用的冻结条款位置
@@ -133,9 +180,24 @@ verdict          PASS / FAIL
 notes            异常、歧义、或需要人类裁决之处
 ```
 
+**环境元数据（每次运行必须齐备）**
+
+```
+runtime_base_tag        = v0.4.0-rc.2
+runtime_base_commit     = 7c0c9bd
+protocol_commit         =
+protocol_sha256         =
+model / model version   =
+Skill loader / platform =
+execution timestamp     =
+fresh session?          = YES / NO
+context / preconditions = （A/B 的完整前置轮，逐字）
+```
+
 **禁止**：
 ```
 ✗ 只写结论不贴原始输出
+✗ 只保存最后一句输入、丢弃 setup（会使 A 组不可复现）
 ✗ 用"看起来符合"替代可观察判定
 ✗ 事后美化输出
 ✗ 因某组 FAIL 而改写协议（应记录 FAIL 并进入修复流程）

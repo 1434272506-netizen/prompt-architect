@@ -5,16 +5,54 @@
 
 ---
 
-## 环境信息
+## 环境信息（每次运行必须齐备）
 
 | 项 | 值 |
 |---|---|
-| 运行日期 | |
-| Skill 加载方式 | |
-| 模型 / 版本 | |
+| `runtime_base_tag` | `v0.4.0-rc.2` |
+| `runtime_base_commit` | `7c0c9bd` |
+| `protocol_commit` | |
+| `protocol_sha256` | |
+| `model / model version` | |
+| `Skill loader / platform` | |
+| `execution timestamp` | |
+| `fresh session?` | YES / NO |
+| `context / preconditions` | （另见下节，逐字记录） |
 | 运行目录 | （如 `/tmp/ship02`） |
-| 基点 commit | `7c0c9bd`（`v0.4.0-rc.2`） |
 | 记录人 | |
+
+---
+
+## 前置上下文逐字记录（**A 组不可或缺**）
+
+> A 组依赖"该 gap 已处于 `CLOSED(assumed)`"。**只保存最后一句输入会使 A 组不可复现。**
+
+### Runtime A setup
+```
+轮1 raw_input  ：
+     model_output：
+轮2 raw_input  ：            ← 由 Authorization 落 CLOSED(assumed)
+     model_output：
+轮2 后可观察状态：（是否进入"待确认假设"）
+轮3 raw_input  ：            ← ★ A 测试点
+     model_output：
+```
+
+### Runtime B-1 setup（fresh session = YES/NO）
+```
+轮1 raw_input  ：
+     model_output：
+轮2 raw_input  ：            ← ★ B-1 测试点："别忘了"
+     model_output：
+```
+
+### Runtime B-2 setup（fresh session = YES/NO）
+```
+轮1 raw_input  ：
+     model_output：
+轮2 raw_input  ：            ← ★ B-2 测试点："现在告诉我还差什么"
+     model_output：
+```
 
 ---
 
