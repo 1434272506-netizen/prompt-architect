@@ -24,7 +24,7 @@
 | `strategies/teach.md` | 118 | `0f5246929de72a0de6fe375f0c01d235f9fa2f69c22e154b6dcb13c5ca064b77` |
 | `strategies/discover.md` | 129 | `5fc3923624421c94e218599b7636e925b59484adc809594bc82a361c5a6463f1` |
 | `docs/failure-map.md` | 199 | `54144e0f368ed5ed56e268557f275960065d94fd4dcacaf16a6c4e41c077edf8` |
-| `tests/acceptance.md` | 424 | `22aed1b8c183eed279b771fc57d13aee3eaea20723ae2f9a6c2509da4b33816f` |
+| `tests/acceptance.md` | 425 | `bddbf375994963243582dd342d4a4004a70e0c9a11737a2e6bbe158b55ad1593` |
 | `tests/cases.md` | 253 | `4e8bab226fe9ff75a6995fb370788c349b7617506cfcd127186c7f4432203442` |
 | `tests/unknown-known.md` | 243 | `4b149c26fc95a7a94a887efff4eef2f448e10c802868ce41f6bdf8fa099458c2` |
 | `tests/evidence-unknown.md` | 237 | `be9dcd9ebe7dc75168ce14ed5c52f43f926a3876ec8e407a1eff95f300626703` |
@@ -39,9 +39,9 @@
 | `examples/case-03-no-idea.md` | 127 | `a620a427fa3b001b59461c4f19693bed2a498594ecc9db3fde3c522ca13f8b9d` |
 | `examples/case-04-stop-rules.md` | 141 | `2632837cab955820284e9d2ce4ea62fc080b48a2cb48e2e04ec6301d08b1ae8e` |
 | `examples/case-05-vague-website.md` | 136 | `2c28ba489474fd0db49ca7c3cb0eaaab425ec36157d4c291690554b5a622a773` |
-| `README.md` | 403 | `9627165e3086e1dd63bdc8304966c82cbf14f22ed54dfc3b8a8d054fc00224ae` |
+| `README.md` | 224 | `4546c38a0007e617fca8392a070a8071d29a13bace138725c74f8fe6e649c744` |
 
-**合计 24 个受保护文件，5436 行。**
+**合计 24 个受保护文件，5258 行。**
 <!-- HASH-TABLE-END -->
 
 ## 3. SKILL.md 冻结章节哈希（异常修改模式下的重点保护对象）
@@ -156,6 +156,11 @@
 
 > **#34 执行结果**：**FRG-01** V0.3 `MATCH 24/DIFF 0/UNREGISTERED 0` ✅｜**FRG-02** V0.4 `MATCH 21/DIFF 0/MISSING 0/UNREGISTERED 0`（**当前 baseline 见 manifest `baseline_id`**；README 入 scope）✅｜**FRG-03** EV-07/08/09 PASS ✅｜**FRG-04** HG-10 PASS ✅｜**FRG-05** EL-02 PASS ✅｜**FRG-06** D02–D12 CLOSED ✅｜**FRG-07** **28/28 claims 可追**（审计器首跑抓出 3 条问题：**1 条真实缺陷**（CS-06 未落 Interface 正文，已补 normative home）＋ 2 条引用错误，均已修）✅｜**FRG-08** README 入 baseline ＋ rebaseline ＋ 最终 verifier PASS ✅。
 > **终局**：**D01 ✅ CLOSED BY FINAL ARCHITECTURE README** → **D01–D12 ALL CLOSED** → **V0.4 RELEASE READY**。
+
+| **#35（预登记）** | `README.md`（公开发布版重写）＋ 新建 `docs/project-status.md` ＋ 新建 `LICENSE` ＋ `tests/acceptance.md` ＋ 本文件（§4 本表 ＋ §2 哈希区）＋ `docs/v04/v0.4-release-baseline.json`／`.md` | 公开发布后的产品化整理，2026-10-03，**按"先登记再执行"事前声明**（用户裁定 = **A**） | **无失败案例**（非证据驱动，属**发布可用性**需求）：`README.md` 是 24 个受保护文件之一，但属**非规范性**文档；`v0.4.0-rc.2` 已 Public 发布后，仓库首页仍是 403 行内部审计档，显著影响首次理解 | ① README 重组为**面向使用者**版本（**403 → 224 行**：定位／五种动作／安装／触发条件／工作流／完整例子／目录与证据入口）② 内部工程信息**不删除，只迁移**至新建 `docs/project-status.md` ③ 修正一处**过时事实**：契约规则编号 `R1–R13` → **`R1–R14`**（权威＝`core/uncertainty-classifier.md`，其 §3.1 与规则表均含 R14）④ 补**章节锚点**与**证据入口**（§1／§2.5／§6.6／§11.0；`docs/freeze-v0.3.md`／`docs/v04/v0.4-release-baseline.md`／`docs/v04/README.md`）⑤ 新增 MIT `LICENSE` ⑥ V0.3 **重冻结**（README 新哈希）⑦ V0.4 **rebaseline-7**（`docs/freeze-v0.3.md` 本身属 governance artifact，登记例外必然使其漂移） | **否**（纯**非规范性文档重排 ＋ 一处过时编号更正**；**未改** §2.1／§3／§6.3／§6.4／§6.5 任何判据原文、未改任何契约条款、未改 Action／Gap／Notification 规则、未引入 V0.5 行为、**未移动任何 tag**） | 见 §2（重冻结）；V0.4 侧见 manifest `baseline_id` |
+
+> **#35 边界（用户裁定原文）**：允许＝重组 README／精简内部审计细节／改善公开说明·安装·架构导航／保留必要证据入口；禁止＝改 V0.4 行为语义／改 contract／改 Action·Gap·Notification 规则／偷带 V0.5 行为／移动 `rc.1`·`rc.2` tag。
+> **#35 工具纪律**：**未使用** `freeze_v03.py --write` —— 该脚本存在**已登记的哨兵重复缺陷**（`tests/acceptance.md` 记 D12 residual）。本次改为**手工最小替换** §2 中 `README.md` 一行（仅该行的行数与 SHA-256），其余 23 行原样不动。
 
 > **#13 说明**：本次**先登记、后执行**（对照 #3 的事后补登记）。执行范围严格限定为"一个失败 → 一个最小原因 → 一个最小修订"，不顺手优化任何其他规则。
 

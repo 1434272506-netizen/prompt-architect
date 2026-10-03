@@ -1,8 +1,8 @@
 {
-  "baseline_id": "v0.4.0-release-baseline-6",
+  "baseline_id": "v0.4.0-release-baseline-7",
   "baseline_kind": "REBASELINE",
-  "effective_at": "2026-10-03T14:16:19+08:00",
-  "established_at": "2026-10-03T14:16:19+08:00",
+  "effective_at": "2026-10-03T17:07:02+08:00",
+  "established_at": "2026-10-03T17:07:02+08:00",
   "hash_algorithm": "sha256-raw-bytes",
   "raw_bytes_no_normalization": true,
   "file_hash_role": "authoritative",
@@ -43,7 +43,7 @@
       "HG-10",
       "EL-02"
     ],
-    "freeze_exceptions": "#13..#33 (docs/freeze-v0.3.md §4)",
+    "freeze_exceptions": "#13..#35 (docs/freeze-v0.3.md §4)",
     "protocol_steps": [
       "BL-01",
       "BL-02",
@@ -263,13 +263,13 @@
       "path": "docs/freeze-v0.3.md",
       "class": "governance",
       "exists": true,
-      "sha256": "2f9f4715e836dd69ccb6b558903ea68b7472b7a854fa96618b44a75352e72d63",
-      "bytes": 84431,
+      "sha256": "33dace074d3f340a88d18fc5a178e03b1fb6647950ca77d0e69579dedbca0a19",
+      "bytes": 86748,
       "section_hashes": {
         "1. 冻结范围（正式封版）": "ebec8fffbf7a6d9f220d4d4c2b8cdc1677779998bd0257a24cd1b3179b28a8c1",
-        "2. 保护基线（全量文件哈希，SHA-256）": "b4e0b39d1a2692d93b8c431c848fd671767933cb2c8e3c50bfd065f705cb2d5e",
+        "2. 保护基线（全量文件哈希，SHA-256）": "fbb1aec40e8bb8c4ee60ca32469a26f765f6e4f2bc9aa2541d49ed9d65fd05e9",
         "3. SKILL.md 冻结章节哈希（异常修改模式下的重点保护对象）": "d7d8fd2c4ee5f12ce1bb4ad149759d47289d30b18c12cdddabcc219d110ca941",
-        "4. 冻结语义（异常修改模式）": "b2338bf3fd80eb77e1fffbe26910cdeaf3afdf21decf622585b622fbb49d8a58",
+        "4. 冻结语义（异常修改模式）": "86be092891cef0807a6a5e9aace2a11db97603b062b667314a8d578a8e40dc4b",
         "5. 冻结流程事故记录（2026-10-01，已修复）": "ce0833fafddde89caaa891c697174d23eec110019a662f7e1241b07dba0bb262",
         "6. 已冻结版本链": "e06acb3cc6921f11cf26ab870126b04ae448e949d5c685150c1ee51fc104f219",
         "7. V0.4 边界与已知发现": "81a672cd59097d39b408f6707616d4c0c98239bfeb7dac0a191118c56dd2a01b"
@@ -497,6 +497,6 @@
     "docs/v04/v0.4-release-baseline.json",
     "docs/v04/v0.4-release-baseline.md"
   ],
-  "rebaseline_reason": "D01/FRG finalization: documents now reference the manifest baseline_id instead of a hardcoded version (breaks refresh-regress coupling); V0.3 hash table refreshed; legacy sentinel duplication cleaned. No runtime semantic change.",
-  "supersedes": "v0.4.0-release-baseline-5"
+  "rebaseline_reason": "Exception #35 (publication-facing README rewrite, user-adjudicated A): docs/freeze-v0.3.md is a governance artifact of this baseline and necessarily drifts when exception #35 is registered, the V0.3 protected set is re-frozen (README.md 403->224 lines) and tests/acceptance.md records the exception. No runtime semantics, contract, Action/Gap/Notification rule, or tag changed. Manifest version 7 supersedes 6.",
+  "supersedes": "v0.4.0-release-baseline-6"
 }

@@ -87,7 +87,7 @@ APPROVAL_PROVENANCE = {
                       "ER-07", "ER-08", "ER-09"],
     "probes": ["NR-01..NR-07", "AR-01..AR-02", "EX-01..EX-03", "DL-01..DL-03",
                "EV-07..EV-09", "HG-10", "EL-02"],
-    "freeze_exceptions": "#13..#33 (docs/freeze-v0.3.md §4)",
+    "freeze_exceptions": "#13..#35 (docs/freeze-v0.3.md §4)",
     "protocol_steps": ["BL-01", "BL-02", "BL-03", "BL-04", "BL-05", "BL-06",
                        "BL-07", "BL-08", "BL-09", "BL-10"],
 }
