@@ -72,6 +72,72 @@ B-2 fresh session（另开）
 
 ---
 
+## 0.3 执行结构：**被测物 与 测试控制 物理分离**（必须）
+
+> **系统被测物（SUT）与测试协议（Protocol）有两个不同的版本锚**：
+> `protocol.md` 是 **rc.2 之后**才加入仓库的，**它本身不属于 rc.2**。
+> 因此**不能**在同一个 worktree 里既当被测物、又读测试协议。
+
+### WORKTREE A — System Under Test（只跑被测 Skill）
+
+```
+commit  : 7c0c9bd
+tag     : v0.4.0-rc.2
+用途    : 只加载 / 执行 Prompt Architect Skill
+禁止    : 混入任何 post-tag 内容（SHIP-02 文档、修复、V0.5 研究）
+```
+
+```bash
+git worktree add --detach /tmp/pa-sut v0.4.0-rc.2     # ← WORKTREE A
+```
+
+### WORKTREE B — Test Control（控制与记录）
+
+```
+内容    : pinned protocol · record template · protocol-pin · evidence output
+用途    : 控制测试、记录原始输入输出、判 PASS / FAIL
+禁止    : 把 WORKTREE B 的内容当作被测 Skill 的运行时输入
+```
+
+```bash
+git worktree add --detach /tmp/pa-ctl <pin-record-commit>   # ← WORKTREE B
+```
+
+### 为什么必须分离（未来审计会问的问题）
+
+```
+问：你测的到底是 rc.2，还是包含 post-tag 文件的后续 HEAD？
+答：SUT = 7c0c9bd（WORKTREE A）；Protocol = pinned sha256（WORKTREE B）。
+    二者分离，evidence 顶部同时登记两者。
+```
+
+---
+
+## 0.4 Protocol Preflight（运行前必做；不一致 ⇒ **ABORT**）
+
+> 目的：**防止测试协议在运行前被意外编辑**。任何一项不一致，**不得开始 A/B/C**。
+
+```bash
+python .gh-search/preflight_ship02.py
+```
+
+**检查项**
+
+```
+① sha256(docs/release-ship-02/protocol.md)        == 当前 pin（见 protocol-pin.json）
+② sha256(docs/release-ship-02/record-template.md) == 当前 pin
+③ git rev-parse v0.4.0-rc.2                        == 7c0c9bd（被测物锚未被移动）
+```
+
+**结果处理**
+
+```
+全部一致      ⇒ 可以开始 A / B / C
+任一不一致    ⇒ ABORT（非零退出）；不得开始，先登记/修复
+```
+
+---
+
 ## 1. Runtime A · Authority
 
 **发送（逐字）**

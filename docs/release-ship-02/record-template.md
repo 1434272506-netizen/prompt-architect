@@ -1,7 +1,40 @@
 # SHIP-02 Evidence Record（填写模板）
 
-> **运行基点**：tag `v0.4.0-rc.2`（commit `7c0c9bd`）
-> **纪律**：原始输入与原始输出**逐字**记录；判定基于**可观察行为**；不得事后美化。
+> **运行基点**：被测物 = tag `v0.4.0-rc.2`（`7c0c9bd`）；测试协议 = pinned sha256（见 `protocol-pin.json`）
+> **执行结构**：**WORKTREE A = 被测 Skill（只有 rc.2）**；**WORKTREE B = 控制与记录（protocol／template／evidence）**
+> **纪律**：原始输入与原始输出**逐字**记录；判定基于**可观察行为**；不得事后美化；**先跑 preflight，不一致即 ABORT**。
+
+---
+
+## Evidence 顶部（四点分离，必须齐备）
+
+```
+system_under_test:
+  tag    = v0.4.0-rc.2
+  commit = 7c0c9bd
+  worktree_a = （路径，如 /tmp/pa-sut）
+
+test_protocol:
+  path   = docs/release-ship-02/protocol.md
+  sha256 = （见 protocol-pin.json 当前 pin）
+  commit = （见 protocol-pin.json 当前 pin）
+
+protocol_pin:
+  pin_id        = （见 protocol-pin.json）
+  pin_commit    = （见 protocol-pin.json）
+  supersede_log = （本文件协议若被修改，此处登记）
+
+runtime_environment:
+  model / model version   =
+  Skill loader / platform =
+  execution timestamp     =
+  fresh session?          = YES / NO
+  worktree_b              = （路径，如 /tmp/pa-ctl）
+
+preflight:
+  command = python .gh-search/preflight_ship02.py
+  result  = PASS / ABORT（ABORT 则不得开始）
+```
 
 ---
 
@@ -18,7 +51,7 @@
 | `execution timestamp` | |
 | `fresh session?` | YES / NO |
 | `context / preconditions` | （另见下节，逐字记录） |
-| 运行目录 | （如 `/tmp/ship02`） |
+| 运行目录 | WORKTREE A = ／WORKTREE B = |
 | 记录人 | |
 
 ---

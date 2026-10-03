@@ -1,0 +1,41 @@
+{
+  "record": "SHIP-02 protocol pin (machine-readable; authoritative for preflight)",
+  "schema_note": "current_pin is the ACTIVE pin object; pins[] is the append-only history",
+  "current_pin": {
+    "pin_id": "pin-2",
+    "pinned_at": "2026-10-03",
+    "protocol_path": "docs/release-ship-02/protocol.md",
+    "protocol_sha256": "51bbf0fae930b08889e39979ac569d41cdbe6d0e430f98895c3fc9e36ee29268",
+    "template_path": "docs/release-ship-02/record-template.md",
+    "template_sha256": "650ff796e9b2583abcf01aa642513233f38a8b8fc8ee184b6f0dad70ca1cf67b",
+    "protocol_commit": null,
+    "pin_commit": null,
+    "supersedes": "pin-1",
+    "reason": "add two-worktree separation (SUT vs Test Control) + protocol preflight requirement; judgment rules unchanged",
+    "runtime_base_tag": "v0.4.0-rc.2",
+    "runtime_base_commit": "7c0c9bd",
+    "runtime_base_commit_full": "7c0c9bd1db02c5baf6b3268a3c43827b7370c609"
+  },
+  "pins": [
+    {
+      "pin_id": "pin-1",
+      "pinned_at": "2026-10-03",
+      "protocol_sha256": "f102ff3cb6e9d05e934b81cf96c8ebcc771878e1544cfd603551081ddff57ab6",
+      "template_sha256": "38b664cff3e1ae982a2c4dcc0c0ec2697c6560dd1ae913c48bf1c7b47a45ea8a",
+      "protocol_commit": "27aad93",
+      "pin_commit": "2465271",
+      "status": "superseded_by_pin-2",
+      "note": "initial pin"
+    },
+    {
+      "pin_id": "pin-2",
+      "pinned_at": "2026-10-03",
+      "protocol_sha256": "51bbf0fae930b08889e39979ac569d41cdbe6d0e430f98895c3fc9e36ee29268",
+      "template_sha256": "650ff796e9b2583abcf01aa642513233f38a8b8fc8ee184b6f0dad70ca1cf67b",
+      "protocol_commit": null,
+      "pin_commit": null,
+      "status": "CURRENT",
+      "note": "two-worktree separation + preflight; judgment rules unchanged"
+    }
+  ]
+}
