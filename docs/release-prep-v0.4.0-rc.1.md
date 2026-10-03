@@ -5,6 +5,38 @@
 
 ---
 
+## ⚠ 发布前干净环境复核（Release Reproducibility Check）· **抓到真实缺陷**
+
+> **方法**：从 tag 建 fresh worktree（不改任何文件），在干净检出里跑三 Gate。
+> **结果**：**首次复现失败** ——
+
+```
+FRG-01 V0.3  MATCH 0  DIFF 24   exit 1
+FRG-02 V0.4  MATCH 1  DIFF 20   exit 1
+FRG-07 README claims 28/28       exit 0
+```
+
+**根因（已定位，非内容问题）**：**行尾规范化**
+
+```
+git ls-files --eol  →  i/lf  w/crlf      （index 存 LF，工作区是 CRLF）
+⇒ 干净检出得到 LF 字节
+⇒ 与"按工作区 raw bytes 计算的冻结哈希"不一致 ⇒ 全部 DIFF
+```
+
+**修复（v0.4.0-rc.2）**
+
+```
+① 新增 .gitattributes ：  * -text          （禁止一切行尾转换）
+② git config core.autocrlf false（local）
+③ git add --renormalize .  →  index 现在就是工作区原始字节
+④ 复验（fresh worktree）：  MATCH 24 / MATCH 21 / 28-28，全 exit 0   ✅
+```
+
+**结论**：**`v0.4.0-rc.1`（commit `c8be5b3`）不可字节复现，tag 按规矩不移动、保留为历史标记**；今晚实际发布 **`v0.4.0-rc.2`（commit `3f80081`）**。
+
+---
+
 ## SHIP-01 · Package / Load Smoke（静态）
 
 | 检查 | 结果 |
@@ -76,8 +108,8 @@ docs/migration-regression.md
 | 项 | 修前状态 | 结果 |
 |---|---|---|
 | 是否 git 仓库 | ✅ 是（`.git` 存在） | — |
-| 已有 commit | ❌ **0 个 commit**（`master` 分支无任何提交） | → **已建立首个 release commit `43f3901`**（105 文件） |
-| 已有 tag | ❌ 无 | → **已打 annotated tag `v0.4.0-rc.1`** |
+| 已有 commit | ❌ **0 个 commit**（`master` 分支无任何提交） | → `v0.4.0-rc.1` = **`c8be5b3`**（105 文件）｜`v0.4.0-rc.2` = **`3f80081`** ＋ 行尾修复提交 |
+| 已有 tag | ❌ 无 | → **`v0.4.0-rc.1`（历史，保留不动）** ＋ **`v0.4.0-rc.2`（今晚发布）** |
 | 回滚点 | ❌ 不存在 | → 见下方"回滚方式"（git 之外另有 `docs/freeze-v0.3.md.bak`） |
 | 排除项 | — | → 新增 `.gitignore`：`.gh-search/raw/`（20 个抓取原料文件）· `*.bak` · `*.tmp` · `__pycache__/`；**均未入库** |
 
