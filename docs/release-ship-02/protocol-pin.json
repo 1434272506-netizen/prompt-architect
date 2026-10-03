@@ -8,7 +8,8 @@
     "protocol_sha256": "51bbf0fae930b08889e39979ac569d41cdbe6d0e430f98895c3fc9e36ee29268",
     "template_path": "docs/release-ship-02/record-template.md",
     "template_sha256": "650ff796e9b2583abcf01aa642513233f38a8b8fc8ee184b6f0dad70ca1cf67b",
-    "protocol_commit": null,
+    "protocol_commit": "0ebe7f2",
+    "protocol_commit_full": "0ebe7f210d75acdb362d4272f91afc84029c02f7",
     "pin_commit": null,
     "supersedes": "pin-1",
     "reason": "add two-worktree separation (SUT vs Test Control) + protocol preflight requirement; judgment rules unchanged",
@@ -32,7 +33,7 @@
       "pinned_at": "2026-10-03",
       "protocol_sha256": "51bbf0fae930b08889e39979ac569d41cdbe6d0e430f98895c3fc9e36ee29268",
       "template_sha256": "650ff796e9b2583abcf01aa642513233f38a8b8fc8ee184b6f0dad70ca1cf67b",
-      "protocol_commit": null,
+      "protocol_commit": "0ebe7f2",
       "pin_commit": null,
       "status": "CURRENT",
       "note": "two-worktree separation + preflight; judgment rules unchanged"
