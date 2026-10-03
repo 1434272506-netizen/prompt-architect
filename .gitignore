@@ -1,0 +1,5 @@
+﻿# V0.4 release: exclude non-shipped raw material and tooling byproducts
+.gh-search/raw/
+*.bak
+*.tmp
+__pycache__/

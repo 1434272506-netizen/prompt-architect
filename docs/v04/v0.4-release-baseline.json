@@ -1,0 +1,502 @@
+{
+  "baseline_id": "v0.4.0-release-baseline-6",
+  "baseline_kind": "REBASELINE",
+  "effective_at": "2026-10-03T14:16:19+08:00",
+  "established_at": "2026-10-03T14:16:19+08:00",
+  "hash_algorithm": "sha256-raw-bytes",
+  "raw_bytes_no_normalization": true,
+  "file_hash_role": "authoritative",
+  "section_hash_role": "diagnostic",
+  "prospective_only": true,
+  "prospective_only_statement_en": "This is the first traceable V0.4 release baseline established after architecture and defect closure. It is effective prospectively from the recorded baseline timestamp and does not prove that these files were historically identical before that point.",
+  "prospective_only_statement_zh": "本基线是在 V0.4 架构与缺陷闭合完成后建立的首个可追溯发布基线，自所记录的生效时刻起具有冻结验证效力；它不构成这些文件在此前历史时点始终保持相同内容的证明。",
+  "approval_provenance": {
+    "closure_ledger": "docs/v04/v04-defect-ledger.md",
+    "defect_closure": [
+      "D02",
+      "D03",
+      "D04",
+      "D05",
+      "D06",
+      "D07",
+      "D08",
+      "D09",
+      "D10"
+    ],
+    "adjudications": [
+      "N08",
+      "N09",
+      "N10",
+      "CS-04",
+      "CS-05",
+      "CS-06",
+      "ER-07",
+      "ER-08",
+      "ER-09"
+    ],
+    "probes": [
+      "NR-01..NR-07",
+      "AR-01..AR-02",
+      "EX-01..EX-03",
+      "DL-01..DL-03",
+      "EV-07..EV-09",
+      "HG-10",
+      "EL-02"
+    ],
+    "freeze_exceptions": "#13..#33 (docs/freeze-v0.3.md §4)",
+    "protocol_steps": [
+      "BL-01",
+      "BL-02",
+      "BL-03",
+      "BL-04",
+      "BL-05",
+      "BL-06",
+      "BL-07",
+      "BL-08",
+      "BL-09",
+      "BL-10"
+    ]
+  },
+  "v03_baseline_reference": {
+    "baseline_doc": "docs/freeze-v0.3.md",
+    "verifier": ".gh-search/freeze_v03.py",
+    "protected_files": 24,
+    "note": "V0.3 受保护集**不复制**进本 manifest；组合执行 = V0.3 校验 + V0.4 校验。"
+  },
+  "class_counts": {
+    "normative": 6,
+    "governance": 4,
+    "evidence": 11
+  },
+  "artifact_count": 21,
+  "artifacts": [
+    {
+      "path": "docs/v04/gap-ledger-proposal.md",
+      "class": "normative",
+      "exists": true,
+      "sha256": "b85ac7077dd1f2e8e00312ac2784267fc7ea998e6cadd63e3aaa7c928132acb1",
+      "bytes": 32487,
+      "section_hashes": {
+        "0. 一句话架构判断": "c8b39c6718ae12a9e4852f66b2a84dae78b7fc76c983f017df2b426c604a7833",
+        "1. Gap Entity 定义": "ca64a03b923f55ed481d40063911ba66009819dcd933713990d654cecc7b3200",
+        "2. Gap 生命周期（六态）": "3e39b208821001960cec1f8b911c3f22fffa5613f4121d39889818521bb17c3f",
+        "3. 与既有机制的关系（**不取代，只统一**）": "8c4e5e817ecca9e18d224af9cffde8ae427afb78c40bf9aa65c050ef396c74ca",
+        "4. 依赖与失效传播（**Validity Layer 最小版**）": "d20649f241ec49db2010037917a835e8a402d3ec5e8701882b559a3ba14fde91",
+        "5. 反馈账（Feedback Ledger）—— 与 Phase 2 的接口": "1dfef6edaa01dd2acc4fb29ca960b8c203698b0222706df64fa9e2d76e04e189",
+        "6. 统一解释力自评（对 32 个失效点）": "42cefb4d9d06eecbe63440b9194dceec1641e56c0754ed0c5edec5c8f22529d1",
+        "7. 本轮明确不做（用户裁决约束）": "25716de9b5ea8e5408536dac48fc60cb5ea698235c704c9debf7c1dad0a32167",
+        "8. 下一步（等用户裁决后执行）": "76ae382ba58da02c2c6b3cb569b96b7be2c5fc974799046a9255ffc97bffe682"
+      }
+    },
+    {
+      "path": "docs/v04/gap-ledger-interface.md",
+      "class": "normative",
+      "exists": true,
+      "sha256": "86b97a9113c182e1adcc329f04be909a07393b0cf228770d9b91811502e27b85",
+      "bytes": 28445,
+      "section_hashes": {
+        "1. 集合谓词（供 §11 直接消费）": "969646242031bdf8592e54dbc9b02f078818337eec53ae82b95e20b4382b89c0",
+        "2. `validity_state`（Pending Validity Change）": "f4116b3ff2e6a1c8fccd35224e6f1c76f26e82d2f9ac3edabaf6e54d250fd625",
+        "3. §11.2 三出口 → 账本状态映射": "723185e2582a2798a25b84cdb7a278dc1a4e36cf5d5c32ba42d5b73af2da2dbc",
+        "4. 重复询问的定义（M6）": "ac82b47bf780514b21088eb842767bc160a792e7e9b69dfd1a0505f760975195",
+        "5. 优先级声明": "58b7401a41902b63d8c57e5aa26e89751eb611269b7bbee5a84dd4a7029e0660",
+        "6. 消费契约（§11 侧如何读，不改 §11 正文）": "0ac9030229da6ef84ec2f5c33cc85268cd2ec052380e86e2c63c691a7e3f1d16",
+        "7. 本层不做什么": "5733c6f65c96690913096c7727f08a9eb22f8f678b98ea1c6fe652409cf4e5cf",
+        "8. 反馈跃迁门（State Transition Gate）": "9b59a8c16816d0134a516ef03f15586bc619b3a019f1bc6816d76a74d2af8f87",
+        "9.1 四条历史一致性不变量（规范性）": "5adf4d0be27501860f331e2c4dab4bda900a51e44617b6dc55fd9013c2af259e",
+        "9.2 回退：`reverted_to` + `reverts` 反向边": "ece689d9b25a76ec8080266fb0ba71c3d2a427b27cac8fe62917d9cb672bceff",
+        "9.3 重开：`reset_scope`": "25e65d41953573395d5d048b56b314e54e0ffbccf9dd8978d089ec74bf5e1c4c",
+        "9.4 修改范围：`revision_scope`": "a288f37d5302dffee28a5528725ca34e399a48cb7533eeab0d04c503e740ca6c",
+        "9.5 责任边界：`pending_external`": "b649119aa79684f37be4988776b66902d2e69500fe775dfea0bf8ada455aa1fa",
+        "9.6 认知边界：`feedback.intent`": "4530c0b39dd96113f51e54b0c4b50e35ec840520a85d5de1373e24cfba0038df",
+        "9.7 v3 验证与状态": "c26852afad84780b3a37a9851a677e2514ea222f5455249d1ae7114a0a0fe95e",
+        "9.8 v3 与 v2 的关系": "b8e36cd8c3cdcc3550c67e1f18b195110d217cb3c93c237d91efffe3115e7d09",
+        "10.1 两段式模型（**不是 `intent → state` 一跳映射**）": "3a8355f520da5f4507813cf61b200c144bf4540263c4d553fdc0790956eaf8ac",
+        "10.2 六分支骨架": "72849a9eb4ca195c6e65b652dabad4b91cdc29a5ff324a29e2f5ea72752bcdd0",
+        "10.3 `CLOSED(assumed)` 重进入口（R-1～R-4）": "3334dbadd508be154d741826d780c2c65e476673870171c4da87ae050535b0d8",
+        "10.4 G-1 质疑撤回 / G-2 meta feedback": "43f5fb0291ecfed73ea46c980ad423455ee54dd93536c74a64133bb70998b272",
+        "10.5 验证与 Release Gate（分栏）": "5934644bf8951c5dc3f94780149fa6a462109e503ebda17658a1978b35b7ad6b"
+      }
+    },
+    {
+      "path": "docs/v04/pending-resolution-transition-contract.md",
+      "class": "normative",
+      "exists": true,
+      "sha256": "4ddc0cf9b9afbfe23cf50be7d0dc0acbdf1cacf38eaefd1a5678fce5119c4daf",
+      "bytes": 21744,
+      "section_hashes": {
+        "1. 核心模型（两段式，**不是 `intent → state` 一跳映射**）": "848b5f0d18bc9c318b83f0e84defde7146e1045ad0b1aead7dd9c59b10833242",
+        "2. 六分支主合同骨架": "b36dbd5a37d7ba5d24e1c02f66710a24e0913297fdafbfb9dff9c373e45545fc",
+        "3. K5-1 · `CLOSED(assumed)` 的重进入口（**不是\"永远 OPEN\"*": "69247b0749d5cee6601a997c096f8de6767c3a16b77e68a66974105d8b1f1775",
+        "4. G-1 · `Challenge` 撤回（challenge withdrawal）": "4b01d176f80b5a67553ed7c4bad5202c3047057aa55df1f304a899d58b4ba4b4",
+        "5. G-2 · meta feedback（**不是第七种业务 Intent**）": "f173f4f352163df04e84f6e046c96df7822d01fa19b96536b9aeed21c142fdbe",
+        "6. 18 个 Contract 证伪案例": "bf4174509900bdd61c3c460980b0bf6d52e9d6bbd30b974692bd584e4bd0426b",
+        "7. 三条不变量验证": "97f1a682019522dc7e2067d0284f3237ff14bc0f3c42f72b8e2acd71a7a5b9eb",
+        "7A. R-2 封口探针 RC-01～RC-04（4/4 唯一）": "4ff3c47c769462c36412b453c2b8d90207e494238b657422236055deb500c1eb",
+        "8. 回归：PR-01～PR-36 与 PR-17": "f0f9108d736510111b70cbdff760633db270befc8c24b7a1b67b3f3fefda7ba2",
+        "9. 边界与状态": "2155c29afc0607354b932ca2bf8e219f94df69d99cf4ecd7d267026d5262d121"
+      }
+    },
+    {
+      "path": "docs/v04/priority-layer-contract.md",
+      "class": "normative",
+      "exists": true,
+      "sha256": "19c68aa9f4576b1baf0f58a08f7b5adb60cfbc8eee0984a388f1122171426c6f",
+      "bytes": 15272,
+      "section_hashes": {
+        "1. 架构位置（四层职责分离）": "6d423236fe20cc9dbd1797289ab4d9934ab70adb58026e1ba137ed60a4e76736",
+        "2. 六条原则（P1–P6）": "3678e226b085bbe652022645212aa1197c2036eabf254a20023eefde1d62d641",
+        "3. 硬调度约束（**收紧定义**）": "7a0982b6d572ce37aa70dd09e250e8bf4272a7c963dc62efa815581c4e2c0e2a",
+        "4. 输入／输出合同": "9ddddc26a0c9427bcd35b0520666ec5a15a41e15a461595cbebb1885f958928c",
+        "5. `priority_hint` 规格（**非数值偏序**）": "2576d3ff718f0fc3f697060803732544e9982fae81b03717967a97b635507903",
+        "6. `deprioritized` 规格（纯调度属性）": "89331dd64a886a30cb8da9621c7ff9c86d4a7c7b767b47bdd900ba7f528bc492",
+        "7. 回归与 Canary": "a54d74d99ecbacf1d80483d4440b006db9a194846ea7c4cb0ac77bd6d40c1b56",
+        "8. 边界与状态": "b84eebd1c35c24c9a7cc4c49b8b6d1d33e166f20a09c346213f2c92d6395b844",
+        "9.1 L1 · `scope` 与 temporal lifetime **正交**": "9f6f9ed3e7c0bc6c5ce865b9600e975e0c0ca1572f7afb15df11e17920da5ae3",
+        "9.2 L2 · `current_round` 的正式定义": "e7392d74bad4f1ae2365f8b406f6fdb806f32fc82c5f6ebf66b678ef45fc2607",
+        "9.3 L3 · `deprioritized` vs `delay`：按**效果**区分，**": "4a662cd4a498c338d1fb89ab58e38c848670d8881b8b942e39fdbffc9ea43d27",
+        "9.4 PHC Canary（8，V0.4.6 收口回归）": "4f6b01d2e0c61c7ff7be9e6e226db39b6a2ab6c8b40e2fed977d563877d1d052"
+      }
+    },
+    {
+      "path": "docs/v04/scheduler-fairness-contract.md",
+      "class": "normative",
+      "exists": true,
+      "sha256": "0e39857c12fb96cf5e7565ffcaa36d13c4e689dd91b64ccc5d626df6691cd159",
+      "bytes": 12588,
+      "section_hashes": {
+        "0. 架构位置（sibling contracts）": "bd9a30690ec098c983fc53fb8aa21ab8e37e42c3f407792478cb403b85733825",
+        "1. 调度层次（**仅调度层，不是全系统优先级总表**）": "826067ef3e5ecc46f3d5a262a0a89755fea48294a6048ebc217fd63a793e13f8",
+        "2. 六条原则（F1–F6）": "5b6eb8f3a8a015bd4479a5a3edfad297bf9fc6971f80379eca1f388e8f2816a4",
+        "3. Fairness Ledger（scheduler-local 观测账）": "499af80ba6ba28ea388628c88eafb5c4152f596a4c17bd7811b53af6be2e1c7b",
+        "4. 显式用户优先权的\"有效性条件\"": "f7d265bcaffd9338a145457aaa215e328da704ab2d078d0043b58f8224a776ec",
+        "5. 职责边界": "4139854b1c60bc17e3f7f5f2f03a08b9eee0f9baaf261d985993ed4c5d1d9979",
+        "6. Contract 证伪案例（18）": "2c8b367032f468757ff0ea046bddce7c5860c0784ee230963acb07b2a902cc7f",
+        "7. 回归与验收": "d5da402d987d4f18290a5659633b4974224b0dbc6570a3ef99c7c7b51d606bdd",
+        "8. 非目标与下一步": "26ccde4227bef35421841cb9417069e61d6185f3b7801d110654cfd32754607e",
+        "9. 状态": "cd6531c0b02a8032760914f44868f46ca7fa27463d15a2703a02d7c2b161156c"
+      }
+    },
+    {
+      "path": "docs/v04/notification-policy-contract.md",
+      "class": "normative",
+      "exists": true,
+      "sha256": "9305e8c34ff4a470fd5469137ee17477f524408be1209d0a7d3bcf13df6ab367",
+      "bytes": 10882,
+      "section_hashes": {
+        "第 1 条（本合同的宪法条款）": "8d9800d5de52bf649205b658ec1fd530d526b451fea78e28e0d2b329df3676b8",
+        "第 2 条 · 架构（共享证据，没有互相写权限）": "48d7f772b7045e0fe9720aa924e7dd6e19d1f2c510d149f2c61043bbd9e11ea6",
+        "第 3 条 · 输出词表（封闭）": "cd12aff26660104a2713e08d906084167edb50f5569628dea52f4fa74ebfe98a",
+        "第 4 条 · `visibility_commitment`": "0b25ebb5ae10db3e92de343a419ba4c81858a2b9ae85674ed3a25bd7679f9ed8",
+        "第 5 条 · K5-1 封口：零表达的 starvation candidate 默认不主动提": "1bcea665b36532ca6f4d6fdf917ea842a88a076e83c0accaa654e5ce4a4ab625",
+        "第 6 条 · K5-2 封口：`next_relevant_checkpoint`": "1cd20cafae4d31c2b89f0fc3cd5904e0a7e173bfe64edf728b181578e7ac8d76",
+        "第 7 条 · 一次足够：one commitment → at most one proact": "81c49eea22dca4c2c03ab50f5aad09943de4535a8faaaf53c8c252f900095d52",
+        "第 8 条 · delay 四象限（正式入册）": "36be619bbff2aa46e2a0422bdc827de57a6ebd089f2b712e8d2e2c354ba6d404",
+        "第 9 条 · NPC Canary（10，本轮固定回归）": "4867033de4a6beaaaa2b237469ca7af4d9fcb17bc83528cd2d5f02cb049f7223",
+        "第 10 条 · 回归与验收": "6f1f0a4694f0f0429901990c20025e644798e64b410036fb489c1750471e1937",
+        "第 11 条 · 状态": "1b3465599025880a10f17ad634a1bd3ab506577ab0a6fb586f33628f1d0d5f9e"
+      }
+    },
+    {
+      "path": "docs/v04/README.md",
+      "class": "governance",
+      "exists": true,
+      "sha256": "b571fd6aefc7a794a25ded68dfa803d2687cedbd3a0c20ad280eebef6064e9c3",
+      "bytes": 20879,
+      "section_hashes": {
+        "1. System Purpose": "f74467cc85181db0e20c2c51666262e6ae36542f0e19823a9b0318162dfd6d19",
+        "2. Architecture at a Glance": "dca3f02245a500ded2b795d82daf8364653a6207c861cb3aea9be8e0ae211037",
+        "3. Ownership Matrix": "6f38d489295c274360105a8cfad15bef9ddabc9bac72f801d230d8be2851b631",
+        "4. Gap / Feedback Interface": "b3272f069ec5c222b49d60eac031b42bc729cb216b82425e69903b794ba04d8c",
+        "5. Resolution & Value Semantics": "c789dbbf26ab4e1d29e5cad668ccb049b4e538de7160181747e06e41733806b7",
+        "6. Priority Layer": "eff17db0fdd1f894188200f437b44e2defcc95346f728daf559a40eb30467aa0",
+        "7. Scheduler Fairness": "29c77cf186e22e8752a2f3eddc05069b0d1a3ecd8b7e7021bd431c43e5e75775",
+        "8. Notification Policy": "c61491a7dce3c82fdf6ecf3b651578fd33ff5d1e34eddf0ffcd98d7db42970d9",
+        "9. Notification vs Fairness": "d510197ed2f908250dc31cde3d33e6693e97cfb2f406b01370988a7b5d87dc45",
+        "10. ASK / §11 Boundary": "c89c14e3ff500ba157f421c2409ae0cadfc905c19d7d4c1f5515130f399360bc",
+        "11. E1–E8 Invariants": "c8e70a4688e5848731d042bed208907c9620286c24ce5783e5b35deab30ec630",
+        "12. Historical / Discovery Governance": "fcd4c8782645c41dfa961cd241ad1ddaeefd2f91f0a8ae34d10622e7b28c5293",
+        "13. Release Evidence": "55275824c2c051139ec078ab6f8ed2af85a8ee8d8311b1d63354da50f261ed30",
+        "14. Freeze & Release Governance": "9fead3703a771fe8f9932e0344dc2d10ae0e9f3983f42b484accee374db1b0a4",
+        "15. Known Non-goals / Deferred Work": "331b262c19a99120534c8d2d44c2bac76e7420463069ab2d2605d94ee14cdc7c",
+        "16. Future Architecture Candidates": "f923842efd3375475bd5a094402ec5ebb7fa54d1eb7b106531ed5c8ffd580d61",
+        "17. Final Release Gate": "e373035b347e7bbbc484c1cf397bf0974bf56ec91325424891b69ebc65aa21ad",
+        "Appendix A · README Claim Index（FRG-07 机器可校验）": "c7ce6af478c7340352841fecddf6e96821ff8a678f4e8b856a94c2d8cddfb59f"
+      }
+    },
+    {
+      "path": "docs/v04/historical-discovery-governance.md",
+      "class": "governance",
+      "exists": true,
+      "sha256": "f46933bff6e6293c39818299da64956ca7ea806076aa0edd61e1032ca2ad75f3",
+      "bytes": 3795,
+      "section_hashes": {
+        "1. 正式条款（5 条）": "e54a7a9649098f91b6ba227e6ac834a97e0e80a849b329b1e338cf5016682548",
+        "2. 应用实例（N06 已落，**本轮不重复修改**）": "252da1d56d0bdc7fc4250f5d4d85ec8d13747391c99688acf518cf0b2b36cb58",
+        "3. HG-10 · Historical Governance 探针（文档身份检查）": "4f0e8aed105beeed89bd3f1e13917185ab1c3f9c830088b34331bcde97ac416e",
+        "4. 适用边界（防止治理条款被滥用）": "f0db64d68310656ddf911003347c1f8acf79dcc31664f094c3a524ba2008209c"
+      }
+    },
+    {
+      "path": "docs/v04/v04-defect-ledger.md",
+      "class": "governance",
+      "exists": true,
+      "sha256": "72a5b2bcd7b5859414e3c68d51d89a95c64556312eafc37574863d7eecd7ef24",
+      "bytes": 39401,
+      "section_hashes": {
+        "一、旧审计账本（**编号保留，含义不得挪用**）": "5040d694461bdfc56bd1e502320ee8a136d66bf3b10fcc7607402bfbb9013cf4",
+        "二、本轮 N 批次（Notification / Fairness 口径）": "dbefc4814f7ec64072ba4b5690f444393f4ab71ca88cd28c413a2f87fdf65bb1",
+        "三、最小回归 NR-01～NR-07（按更新后合同重跑）": "0aeed2d5ddbc1d3e1fd15107ab3944e09e24b93cdfed9c44910ec253905c64f9",
+        "四、N10 · Authority transfer ≠ Value confirmation（": "1e81314e7392834a3d6babe381f73a89157c136f6b83cb2e93365e97fcbbf2a1",
+        "五、V0.5 架构候选（只记录，不改 V0.4）": "e439aae2f50580c929d1f542e3a7e16556790fe73225de871a7f349e43b24a2a",
+        "七、D04–D06 closure sweep（第一批 · **语义澄清组**）· 全部 CLO": "8b4ed798f1190c2cc5ec972e512dfcc1a9c4249b0c16067baacac7f84f0021b5",
+        "八、下一批（用户已指定思路）": "732979e3ee22f204f7e571260abc177074e0f20fafccfb5c519eed7cf852127e",
+        "十、D07–D09 evidence repair（第二批 · **只修证据链**）· 全部 C": "2766e7d7629e6943ea81a797b4dbdc4d284c34a818e3e74714fc4f3bd8e750b1",
+        "十一、下一批": "d10ee963bcf7aeed9ba2f2afde3e94d0dd3564e889289828b1479f99389a2b6d",
+        "十二、处理顺序": "256c82ddd9a96cdb9abcf524a8fdd1a308b2552a49737b172b62bc2b36b3bb6d",
+        "十三、D10 历史治理 ＋ D02 证据回链（第三批 · 收口）· 全部 CLOSED": "91bac0b61bbcf19c4436756c70604cd68ea3c11b2ecbb495b3f000427ce62d17",
+        "十四、V0.4 Release Baseline Protocol（BL-01～BL-10）· ": "a9ae6d02d53b4ca2710713e54011b491d590e359bb280b677b24eebc8544965e",
+        "十五、D01 · Final Architecture README ＋ Final Relea": "7e45f4be5b17fd8a11530faa297b7e0e733cbe915304b8b3df5508affc71ed9b"
+      }
+    },
+    {
+      "path": "docs/freeze-v0.3.md",
+      "class": "governance",
+      "exists": true,
+      "sha256": "2f9f4715e836dd69ccb6b558903ea68b7472b7a854fa96618b44a75352e72d63",
+      "bytes": 84431,
+      "section_hashes": {
+        "1. 冻结范围（正式封版）": "ebec8fffbf7a6d9f220d4d4c2b8cdc1677779998bd0257a24cd1b3179b28a8c1",
+        "2. 保护基线（全量文件哈希，SHA-256）": "b4e0b39d1a2692d93b8c431c848fd671767933cb2c8e3c50bfd065f705cb2d5e",
+        "3. SKILL.md 冻结章节哈希（异常修改模式下的重点保护对象）": "d7d8fd2c4ee5f12ce1bb4ad149759d47289d30b18c12cdddabcc219d110ca941",
+        "4. 冻结语义（异常修改模式）": "b2338bf3fd80eb77e1fffbe26910cdeaf3afdf21decf622585b622fbb49d8a58",
+        "5. 冻结流程事故记录（2026-10-01，已修复）": "ce0833fafddde89caaa891c697174d23eec110019a662f7e1241b07dba0bb262",
+        "6. 已冻结版本链": "e06acb3cc6921f11cf26ab870126b04ae448e949d5c685150c1ee51fc104f219",
+        "7. V0.4 边界与已知发现": "81a672cd59097d39b408f6707616d4c0c98239bfeb7dac0a191118c56dd2a01b"
+      }
+    },
+    {
+      "path": "docs/v04/failure-inventory.md",
+      "class": "evidence",
+      "exists": true,
+      "sha256": "b3e6b6189b84f008ad9ff40228c776c3d8132c5f31ce697ccc496e1f93dba030",
+      "bytes": 17934,
+      "section_hashes": {
+        "0. 总账": "ac93a44413b375ff6a6c5b9e60fd19f1198a8144dbeab3ed3eaf5397f2abd466",
+        "1. 失效点总表（按方向）": "c6f33878286d2eab63d1922c31f8f2b25d48f8ed1ac909a0ec32a2622dacbc31",
+        "2. 三个结构性空白（V0.4 需要机制形态的落点）": "6febb65e48d4c79629dfb01e17ffbf1047a46577e98c7ca70dca7427a32c5496",
+        "3. 明确\"接得住\"的对照（防止高估）": "c908440babff105771935bf67c32e48254fa37941b9b934479f02db3cad6547d",
+        "4. 独立证伪报告摘要（不落盘，见会话记录）": "70f90c472e3181b9ef9e6a2089b33891987c891c22a0a67326c7ec30de4fae1f",
+        "5. 本轮附带发现：冻结流程事故（已修复）": "2b0c9b60c3d876cec61d2c807da03f91c3d4e7dc1ee759884ce58197e82dc778",
+        "6. 优先级建议（给 V0.4 设计阶段，本轮不做设计）": "d92bb7e137e701e12d3d32b5ee960d8edd721c446f4daf39ffc17f6a53d52ed4",
+        "7. 诚实声明": "57306569513df951f8b627ec3662934719ca2b3305bb2860d00eea40a29e7c46"
+      }
+    },
+    {
+      "path": "docs/v04/interface-v3-migration-manifest.md",
+      "class": "evidence",
+      "exists": true,
+      "sha256": "fab0078bdc8cbfdd718c875ba099384e9272afdf88385b743e4a8b73874f625a",
+      "bytes": 8174,
+      "section_hashes": {
+        "0. 术语": "31b02669d059cc8a28c23c6ae348f4606e8e704d5f6fd1a99b6067b38d924aab",
+        "1. 五个区块与原始计数": "6366dd649fbed443360127127e13e60fb2007de9d523fecb894fffb75c01195f",
+        "2. AL · 精确别名簇（28 簇 / 覆盖 59 例 → 唯一化 28，删除 31）": "32d019316804f2ba6f199436012e57907fe1b24a7bae381290267f7ba07b3a23",
+        "3. OC · 场景类重叠（不合并，仅标注）": "399cde7f3e63d5922b2ac1c06b73a3691ac14c192a86ecb0cb5b0a5a8bca6a07",
+        "4. 计数（Raw / Unique / Fixed）": "f7aa59a80aaa21fd28a828b155968a8a187ab4d3f5089d9040635d18f7b12c5a",
+        "5. 本轮的执行顺序": "22b1b48fe8beac881e92fbd9ae72026b223efb60ba13ad2452b1e38e384b7fb6"
+      }
+    },
+    {
+      "path": "docs/v04/interface-v3-migration-test.md",
+      "class": "evidence",
+      "exists": true,
+      "sha256": "d82e31ec5838af586b5f46e4742e2551129d0b2e7a70b9010c15c60440956971",
+      "bytes": 13483,
+      "section_hashes": {
+        "1. 全量 K 分类（167 raw）": "ea909fafd371744c7774994568ec3a766ce4d537da482c4a173a19a4976ee955",
+        "2. 四条历史一致性不变量": "f5cfc97b23b2f6e2e14736301c8a691cf13c6c1b0807eb8f86c851b18a13a24b",
+        "3. 反回归假说（K4 攻击记录）": "18f37aa70a3dc2856b4c522ff2164d4cdc3167a9ddc14ae1e1feb66307ad0999",
+        "4. `pending_external` 的完整 suspend → resume 回归（V3": "d6807a6208d22e95cd5c9ede7d24d60c7975cd3ba333ec849afa93ec2b487035",
+        "5. `unaware` 证伪探针（V3-F1）——**本轮唯一失败点**": "99dee4ed1f70cb4b3cff0aed0fb44cc1006251fb48eec9024eeb5a7e41a95d48",
+        "6. `feedback.intent` 跨轮变化回归（V3-C5）": "17cec8ceb85b65abdea15ba5f27dddbd1b06cb584e7176bbd580cb2553ad7f04",
+        "7. Canary 汇总": "73fe3e73f7edc282381bd7018571718cd99e402183d2863aefb396e450f868bc",
+        "8. 冻结门槛核对": "38b868982e0e11585a93cf202ca6b9b72155063ee3f7ec403abc8951b9c69ea6",
+        "9. Release Regression（raw 口径）": "1135d091c8049964de203acbcee62ba71f9fd7224b37a3b075d6bc6d77ee673c"
+      }
+    },
+    {
+      "path": "docs/v04/pending-resolution-second-challenge-discovery.md",
+      "class": "evidence",
+      "exists": true,
+      "sha256": "0856db8c5800e5efe2e64f0b13517cab9c4cd59b599bdd6e8852914b754be5d9",
+      "bytes": 16483,
+      "section_hashes": {
+        "一、Revision 分支（6）": "40265a79e3df68b914fa210ee40529fcff6d1854c4a77943aa4161acfae6d05e",
+        "二、Unable 分支（6）": "8e6c0d6b318c2ea1afbfdb8aa0114dec23acdcb765c777554350f6f38c0e0710",
+        "三、Refused 分支（6）": "0eff5e071001b0c2867d114316c11612708dece7017232a43e75049d9b586ba6",
+        "四、Authorization 分支（6）": "eb1eb511b5842b5540a1bf2a3f4b7d739126a706a3d84e11e05f79ee6fcdd835",
+        "五、Challenge 分支（6）": "67f4496fec339cfd2130a3cdc46960d929f3bc433c6992d6e9f2474f65fde95e",
+        "六、External dependency 分支（6）": "2e9f7152e38459e911cac9b56c169632e5b579c5d32e952eced6de16c4262dff",
+        "七、四个攻击问题的结果": "93d0c31ae992ee0ccc81093da9b800a4ba52a88d88d88f3ecc96fae8751d81ba",
+        "八、K4 / K5 结果": "a6b03f023e656a83dffb299eb42831139ebfd83f425a221016b8c5ffcd275d60",
+        "九、本轮验收": "3d7ab838233c20cf0a9774b80cb4255e16842bde78efcc29cc4ecf946c96557f"
+      }
+    },
+    {
+      "path": "docs/v04/priority-model-discovery.md",
+      "class": "evidence",
+      "exists": true,
+      "sha256": "4316708934d8780c74c92ca4ab630ad1505e365abfffe6e394ce61420bc5f86e",
+      "bytes": 13780,
+      "section_hashes": {
+        "组 1 · 用户显式优先级（6）": "9d140c533dcb8d0e4f2409e452e7c795aa23c6e894a32d676127a1e6d81a7508",
+        "组 2 · blocker × 降权（6）": "230aba1f764cc1af26b5fb6c0a21b7496b4b65b34ce472cebaf5c75555380c3d",
+        "组 3 · risk × priority（6）": "93f24f687b0547ce6a79d8b4f4d41ead45a6dbe8c68e4fd000b2b91c2a0faa46",
+        "组 4 · dependency × priority（6）": "bd7a5a283b65993c1fc8d815f59d9eb25dd019cfdb26d08bb935bf0c8c889e03",
+        "组 5 · 多 action 竞争（6）": "ad7a20c336b1f7ac0432dc453c5eae86575c8d6b1bfaf597a6e127f7b474be78",
+        "结论 A · Priority Layer 的职责边界": "366de5b2e2c0b079d53357e30cdd74038c8dad83f0b20b30d20c760ca348239b",
+        "结论 B · `deprioritized` 是否应作为**纯调度属性**": "def0b8a22e4e118111294a5c6da8a00c9de08e697bbfe89dc59a4a6048319377",
+        "冲突与字段需求": "b648c317e789103045d2282aec2c0bfe430bd05f922a84921867f002de402872",
+        "验收与下一步": "b48ab4d22c4d90b8858bfa57942c2eecb40ee6fdc33ff445a19df2d899a7c79e"
+      }
+    },
+    {
+      "path": "docs/v04/priority-hint-language-discovery.md",
+      "class": "evidence",
+      "exists": true,
+      "sha256": "de2d6e05f19e8e96206d1f80803318e8d8149cde25ce0cbbf1396aa43269ee00",
+      "bytes": 17030,
+      "section_hashes": {
+        "0. Layer 1 解析契约（本轮要验证的对象，**不新增机制**）": "04c78f6410c9c3fe2bfc5c494622c827b825c002acdcf40c74fdc5977818a8ae",
+        "A. 顺序表达解析（8 例）": "c8704f904ea5cd888f2e573ddb8fc7b828efd214b98c39e5399525e72c1a8b9d",
+        "B. scope 判定（8 例）—— 重点打 **O-1**": "a9325a18873002a1d38327fd29196b8cfb5185401400d00a25e4445c45a354ea",
+        "C. 生命周期 / Revision（6 例）": "cade96269862676ff107fe2cc732045040371e396f0e89b66aa05176f14f9c34",
+        "D. 冲突 / 条件 / 复合表达（8 例）": "c0613bb00665a2dfea38505ae51369f9b2b84c160640f9230d15e62d190c2281",
+        "五条不变量验证": "06d010de17ac708cc2cc0720b2c38d4455e7b7ef6dfc24fe230ee28e6d469138",
+        "通过标准核对": "9731970f109a3541b9c9f9134c48abe1fc34a8dc8a3ff1e4da5f71f1b0c44f61",
+        "O-1 / O-2 收口": "2674581155b6e71df8821a7d3ff91fc1327c709e129bdf8f89ba26bdb46b66e8",
+        "边界与状态": "70d26c60915155ce9cfbb2277fb3acef4f154960513763853f227f16938c7532",
+        "封口（V0.4.6 收口，例外 #21 预登记后执行）": "472cf33a2853193dca22eaf5ca5977eb766bc8b4cddd824744e3795a4ffaf55e"
+      }
+    },
+    {
+      "path": "docs/v04/scheduler-fairness-starvation-discovery.md",
+      "class": "evidence",
+      "exists": true,
+      "sha256": "f44adfac583380b5bf0e6b3173a8d9274aece0a8754098168f6ce4f7f4e22549",
+      "bytes": 13165,
+      "section_hashes": {
+        "A. 真 starvation（6）——纯容量／软排序竞争": "3445bc85a8241120ac903d46e74aae6b0ce6ba30b4e9734be55a9c116230afd4",
+        "B. 假 starvation（6）——\"等得久\"不能单独触发 fairness": "51ce8d89a632908bcc5491aa79732c53b15f982b0d66a23cce7ae7f9c6e564c0",
+        "C. starvation × 用户 priority（6）——本轮最关键组": "0ccbae340b46f44764556aff222dd0c6dd07cc63ab9b47fb4e768c39950221e1",
+        "D. fairness × hard constraints（6）——公平**永远不能越过硬门*": "23349ccc40a6df17fa43b6103148d21bde40011c3ffa6957464b9b43e3c8b16f",
+        "E. notification / user visibility（6）——O-3 的另一半": "5fa52eef507a6a257df36ba93c10ec7fd452f363d3c479c9ae29b6dfc89b6441",
+        "F1–F5 五个问题的结论": "7a347634f501b25a50dd11e5f5ae00f9083031b235d87d72fb9b0520e77739ae",
+        "通过标准核对": "ed844b3422c8b8eaf97e91bba5b6148da5d2275fe352afd02fe50a0a82b2f0fb",
+        "是否需要一个 fairness ledger（证据，不设计）": "b3cd6416f2c31ab4d3b94b9d8b65334906d88ffb1b097327c8032d3e2af09838",
+        "边界与状态": "6b342aefd1c3ff227fb892e47072ed0caa39623b81893fce2d188291252098f8"
+      }
+    },
+    {
+      "path": "docs/v04/notification-policy-discovery.md",
+      "class": "evidence",
+      "exists": true,
+      "sha256": "765a8c562ef6b1966c3f264437f3a5706b43988498a039d16cf243dc4c0aa83a",
+      "bytes": 15133,
+      "section_hashes": {
+        "0. 候选模型（**测试对象，非规则**）": "1947f4bd307836c21ca8f424af874c4b30d0d09304ef118ecafaee51d000646b",
+        "A. `visibility_commitment` 的成立与强度（6）": "414f0c2a4c7cc371df41e53c2ae76a626732f2673a552046b2e44a77f03e2ddf",
+        "B. 提醒时机与触发条件（6）": "1a63700a1b670ac9fadcc6e5e9d15241f5cc29c6711ca47ad95df03369d0638e",
+        "C. 一次够不够 / 义务解除（6）": "5dc316930f89ddec4527e780ebeaff5f92f9a42a9cfbe6bf0cff28f53beb09ae",
+        "D. 防通知骚扰 / 交互负担（6）": "6038f39706cd250bf68b9338df119f315cf6f2359bae79f7a3b9f2bf5d452d30",
+        "E. delay / deprioritized / starvation candidate ": "8b58b84aafdc452fe9799accad0a7314f9898b180ce9669c9f980c7bd5e1b0eb",
+        "五个问题的结论": "e977d7c79305263872da7d7f192200cc16c641e2a9e230122f7133b60a4c4cff",
+        "关键架构验证": "344d1f04097a4800ef345d0fb78f35d3fff45d45315a77e0928d93b90c1973b1",
+        "K4 / K5": "95c12b3fa166c4dbdad69529cc507f10344e4e8e2ccebec37457850fbfd11d70",
+        "状态": "c4f489eaab3f983880626177d80bf7a599f497d16b23f564263119e3de3341f7",
+        "封口（V0.4.8-B 收口，例外 #25 预登记后执行）": "9859277cbd1ea2499b5d38c3d1bfafefd7017fb3427f92bb0c9f2f19d9d3f474",
+        "追加更正（append-only，N06／N08 裁决）": "191c019d57011f8eb02dfffb5d9e44438b1eb1d33286c89f8c97603cb6be2332",
+        "跨文档更正（append-only，N10 关联）": "55d41547a359ea834e4153c1f96651b11db2c9abca6d853da10a0edcfc97d2cc"
+      }
+    },
+    {
+      "path": "docs/v04/e2e-adaptive-replay.md",
+      "class": "evidence",
+      "exists": true,
+      "sha256": "001b48afa3a6d071f0a0e1bb155fb0ce74696e8620df39eaebb1a52baa345818",
+      "bytes": 26311,
+      "section_hashes": {
+        "E2E-01 · 正常收敛（模糊起点 → 完整交付）": "0734e971174e1238e28e59ff6f997c2fd284909c6ce247f8e16da5659a29c013",
+        "E2E-02 · 正常收敛（含中途用户排序提示）": "4e5d6372cc4dbde62892089a6d532ec78debf4d69329843939384d76068e1b8e",
+        "E2E-03 · 中途 Revision（产物级变更）": "e57a489a0f0e78b5371e054c3c5be218d40aa035c864d121db04daff0753a7d9",
+        "E2E-04 · 局部 Revision（不得扩大闭包）": "7b6cbe70b841407380806e1215538b63c687c276195e008d379ef931ca2e47ae",
+        "E2E-05 · 授权 + 风险门（普通项 vs R6 项）": "e201495fe5360e348d69b54e2c89905e8caebb17de232bba6f4b2d157ffd8692",
+        "E2E-06 · 授权后反悔": "690728c44b63a4a65b6fe624b0a4e32db76e84eb716e0382267ff998a8c3d8da",
+        "E2E-07 · 外部依赖（暂停 → 恢复）": "eca942992827cc0ef25df0f1f905da16dbd3adb9e4b0182f29775fed4bf58ab1",
+        "E2E-08 · 外部依赖（外部回复 ≠ 自动生效）": "af826d3b551471ee5f54180df013a7b65293a86f78ff7cf2741b534aa15176b7",
+        "E2E-09 · Priority 与依赖冲突（颜色依赖品牌定位）": "fbfecd1b3912239e6cadc3c9ad6db834ebb1119692b19ca4e819696be065c75b",
+        "E2E-10 · `priority_hint` scope 失效（不得泄漏到后续轮次）": "e608900bc84e222c06ac7aa4ca8cbe0a993e93c8cc818195a88521c0dbbe7d2e",
+        "E2E-11 · 反复质疑 / 回退（A→B→C→回 A→质疑 A）": "ef5db19e60ef35a5a8df2a660d53dd7ba8676540ccd204738b80cd3b44972b5f",
+        "E2E-12 · 撤回 + meta 反馈混入": "7745a8de6f2935939fa6959ad68bfbfe238c96918438e1a059eb07d597b3e395",
+        "E2E Gate 汇总（12/12）": "0abef33d451ddef38fbf54256a3ce0120caa552ea1e2522db7eddfe360e97bc6",
+        "残留观察（→ 移交 V0.4.6，不是本轮失败）": "b9cffcb43b9f008763e4d7d38ee06c2fad46aae21f41d0bdd16e4b8b14b94094",
+        "边界与状态": "4df1b10df50b262d958f432279363ea5fdd61f95f7a4a415e1454948c34829ec"
+      }
+    },
+    {
+      "path": "docs/v04/full-adaptive-e2e-replay.md",
+      "class": "evidence",
+      "exists": true,
+      "sha256": "cb023a870dd901453c803ea4b8a75be5ef43eacfb0d327d348b7e4bbab804625",
+      "bytes": 24934,
+      "section_hashes": {
+        "剧本 1 · 纯 starvation，无提醒义务（6 轮）": "b9be2e6d562bfb067bd9169a7788cc32496a5e2e61c8d3a631ab27894b345da8",
+        "剧本 2 · 纯 starvation（软竞争变体，5 轮）": "820b1aef92df25fda96464bf97846fb9f10f5018a7bdc3e8eb2e037b220d6a88",
+        "剧本 3 · `不急，但别忘了`（三分离＋checkpoint 提醒＋discharged，7 ": "617e526c2cdb3845a11f93f62b18dc03c2338a745fb4e9873fcec270cb88a1e1",
+        "剧本 4 · `不急但别忘了` 遇高负担（6 轮）": "3c23b2040a522b1202f20a1b6ae4a97ca10420251f9f80803a663ed5839ef30c",
+        "剧本 5 · 显式用户 priority × fairness（最关键组，7 轮）": "a2263fbff2a153b1a7b9c2985812ce5883337f4311cd8cd4e59e5e013e39753b",
+        "剧本 6 · 显式 priority ＋ 有承诺的重新暴露（6 轮）": "b426e54f24a7b24ac9aa1f04f6daa48fe26c43fef1ee009615cf65e008eea0da",
+        "剧本 7 · delay 对照 A（无 commitment，5 轮）": "b983d6cd8c18cf2820adfc31eb4dd2652ae5d220948eeb53aa11cdf5c98f5f79",
+        "剧本 8 · delay 对照 B（有 commitment，6 轮）": "d9473af350c47889076528a3517b454f417db2465b766be06aba3645c8e0ce84",
+        "剧本 9 · external dependency ＋ notification（7 轮）": "6c43614e21723dde546377653a930652b4bb9b8307668f2a82d8e88e339ee7bb",
+        "剧本 10 · resolution generation（6 轮）": "bbf24fb461917602b05727d8dc0dd237b906d3946097ddfc24bbf709bb10f34b",
+        "剧本 11 · notification 与高负担轮冲突（5 轮）": "77467fe58c6cc0a744a6edd3ad3bf4a653571b0af9bb668364c43ee6dab49fd0",
+        "剧本 12 · 大混合压力剧本（9 轮）": "9deab37238b3ae1661993bfaf646e845374dc40fff5c6106cb96941b7687b84a",
+        "E1–E8 验证汇总": "673c3b4a2dd9a545e5673178b7e43a7c251576dea3e848c3f59c2bb10d2209c5",
+        "Release Gate": "f548f191e8e4d2219c4fe6905431f6462c86c57785283ccbc643daaf41b07b93",
+        "观察（供 V0.4.8-B 之后收束，不构成规则变更）": "d7f714afae19a3d2c9701b832629dd4a4128e1fb322faab45e121a04f1666ca9",
+        "边界与状态": "8e3c4519be0d1aae1f130e79fc992d9fd5269c9e7e60cf65ce1dd64be99c35f9"
+      }
+    },
+    {
+      "path": "docs/v04/release-evidence-closure.md",
+      "class": "evidence",
+      "exists": true,
+      "sha256": "18cae414f6a47ae8710b5916b51faa0ca7c7a88f72227b56877e3df00108f05a",
+      "bytes": 11109,
+      "section_hashes": {
+        "ER-07 · D07 · E2 ownership trace": "f0351f6cb23ea31b483f89823337289b2025f5cc3bcebf5c259d191b8e8af6ac",
+        "ER-08 · D08 · E3/E5 corrected evidence index": "c7b52600276d067fb26967c98e23cc2f2587b848787784e8e86c95c791340cf9",
+        "ER-09 · D09 · scenario-12 debt provenance trace": "c6670ff747178a187d5b557be0de7762c02a0d398a5828940db0aab1268968f5",
+        "证据一致性探针（EV-07／EV-08／EV-09）": "7bcd3ceabc2abf6620e5f6dd1b7849bb4461c01f2827a3b28a01a6e81eb3a5c2",
+        "回填": "4278d59955eaea2f9e6a68389e1ee3a4399a919c64e13bce1d95a22e164ded28"
+      }
+    }
+  ],
+  "out_of_scope": [
+    "docs/v04/v05-architecture-candidates.md",
+    "docs/v04/gap-ledger-coverage.md",
+    "docs/v04/gap-ledger-x-v11-compat.md",
+    "docs/v04/gap-ledger-replay.md",
+    "docs/v04/feedback-semantics-discovery.md",
+    "docs/v04/feedback-transition-design.md",
+    "docs/v04/feedback-language-map.md",
+    "docs/v04/feedback-state-extension-design.md",
+    "docs/v04/feedback-responsibility-extension-design.md",
+    "docs/v04/v0.4-release-baseline.json",
+    "docs/v04/v0.4-release-baseline.md"
+  ],
+  "rebaseline_reason": "D01/FRG finalization: documents now reference the manifest baseline_id instead of a hardcoded version (breaks refresh-regress coupling); V0.3 hash table refreshed; legacy sentinel duplication cleaned. No runtime semantic change.",
+  "supersedes": "v0.4.0-release-baseline-5"
+}

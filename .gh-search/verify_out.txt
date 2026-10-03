@@ -1,0 +1,37 @@
+== SKILL.md 章节 (36) ==
+   0. 适用与不适用 | 1. 触发信号（满足任一即启动采访） | 2. 采访循环（Interview Loop） | 2.1 对外表达规范（用户侧语言） | 3. 问题优先级梯级（P0 → P3） | 3.1 冲突优先：Conflict 与 Tension  | 3.2 关键槽位未解决计数（unresolved） | 2.5 未知类型分类（Unknown Type Clas | 五种类型 | 五种动作 | 决策树（判定顺序，逐条短路） | 三条不可违反的规则 | 4. 模糊词协议（Vague Term Protocol | 内置模糊词表（8 词 × 正交方向） | 5. 核心对象七问（按需查表，不是每轮七连问） | 6. 停止规则（Stopping Rules） | 6.1 信息足够的判据（同时满足即停） | 6.2 停止动作 | 6.3 降级规则（不硬追问） | 6.4 禁止 | 6.5 需求变更：Explicit Revision 与 | 6.6 决策记录（V0.3 新增） | 7. 双轨标记（用户需求 vs AI 建议） | 8. 出口：极简 5 段组装 | 待确认假设 | 9. 反模式清单（Anti-patterns） | 10. 版本边界 | 11. 问题选择：高信息增益优先（V0.2） | 11.0 动作选择优先于问题排序（V0.3） | 11.1 同层二次裁界（Q1） | 11.2 高价值缺口难回答（Q2） | 11.3 表达深度适配（Q3） | 11.4 选项质量（Q4） | 11.5 提问形式：开放 vs 选择（Q5） | 11.6 上游依赖优先（Q7） | 11.7 相关缺口的合并提问（Q6）
+== contract 章节 (10) ==
+   1. 核心命题 | 2. 五种类型（Type A–E） | 3. 五种动作（Resolution Actions） | 3.1 高风险 Type C 前置（R14 完整判据，V | 4. 决策树（判定顺序，逐条短路） | 5. 冲突与组合规则 | 6. 决策记录字段（在五状态之上扩展） | 7. 与既有章节的挂接 | 8. 反模式（本层新增） | 9. 自检清单（每次收口前跑一遍）
+
+== 陈旧引用 ==
+  §11.1–11.8             ['docs/failure-map.md:153']
+  动作选择=§11.7(错误)         OK
+  V0.1 旧标题               ['SKILL.md:3', 'SKILL.md:3', 'SKILL.md:6', 'SKILL.md:204', 'SKILL.md:229', 'SKILL.md:363', 'SKILL.md:493', 'SKILL.md:533', 'core/uncertainty-classifier.md:3', 'core/uncertainty-classifier.md:14', 'README.md:1', 'README.md:5', 'README.md:5', 'README.md:177', 'README.md:291', 'README.md:299', 'README.md:299', 'strategies/ask.md:3', 'strategies/ask.md:99', 'strategies/discover.md:3', 'strategies/inspect.md:3', 'strategies/inspect.md:95', 'strategies/inspect.md:116', 'strategies/show.md:3', 'strategies/teach.md:3', 'strategies/teach.md:41', 'strategies/teach.md:41', 'tests/acceptance.md:129', 'tests/acceptance.md:134', 'tests/adversarial-question-selection.md:282', 'tests/evidence-unknown.md:177', 'docs/r14-rerun.md:268', 'docs/r14-rerun.md:270', 'docs/r14-rerun.md:270', 'docs/r14-rerun.md:272', 'docs/r14-rerun.md:280']
+
+== 被引用但 SKILL.md 不存在的 § 号 ==
+  OK 全部存在
+契约规则编号: R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14
+引用不存在的契约 Rn : OK
+
+== 测试文件 ==
+  blind-spot.md            案例= 9  BS-01, BS-02, BS-03, BS-04, BS-05, BS-06, BS-07, BS-08…
+  evidence-unknown.md      案例=10  EU-01, EU-02, EU-03, EU-04, EU-05, EU-06, EU-07, EU-08…
+  high-risk-c.md           案例= 8  HR-01, HR-02, HR-03, HR-04, HR-05, HR-06, HR-07, HR-08
+  unknown-known.md         案例=11  Test 01, Test 02, Test 03, UB-04, UB-05, UB-06, UB-07, UB-08…
+  合计唯一案例 = 38
+
+== 禁用词（唯一裁定） ==
+  OK 无禁用词
+
+== strategies 用户可见模板内的机制词 ==
+  ask.md           OK 无机制词
+  discover.md      OK 无机制词
+  inspect.md       OK 无机制词
+  show.md          OK 无机制词
+  teach.md         OK 无机制词
+
+== V0.3 新增规则支撑 ==
+  R11 -> ['strategies/show.md', 'tests/acceptance.md', 'tests/cases.md', 'tests/evidence-unknown.md', 'tests/high-risk-c.md', 'tests/unknown-known.md', 'docs/failure-map.md']
+  R12 -> ['tests/acceptance.md', 'tests/blind-spot.md', 'tests/high-risk-c.md', 'docs/failure-map.md']
+  R13 -> ['tests/acceptance.md', 'tests/blind-spot.md', 'tests/cases.md', 'tests/evidence-unknown.md', 'tests/unknown-known.md', 'docs/failure-map.md']
+  R14 -> ['strategies/teach.md', 'tests/acceptance.md', 'tests/high-risk-c.md']
